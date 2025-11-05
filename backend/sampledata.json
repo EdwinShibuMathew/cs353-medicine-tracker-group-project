@@ -1,0 +1,28 @@
+{
+    "users": {
+        "userID": {
+            "userDOB":"01-01-2000",
+            "userName":"Joe Doe",
+            "allergies":["allergyID1", "allergyID2", "allergyID3"],
+            "onMedication":true,
+            "emergencyContact":"Joe Doe Sr",
+            "medication":["medID1", "medID2"]
+        }
+    },
+    "medicalDatabase": {
+        "medID": {
+            "name":"Name of medicine",
+            "brand":"Brand of medicine",
+            "countryOfOrigin":"Country where medicine was made",
+            "allergens":["allergyID1", "allergyID2", "allergyID3"]
+        }
+    },
+    "medicationStorage": {
+        "userID": {
+            "medID": {
+                "quantity": 5,
+                "expiryDate": "01-01-2027"
+            }
+        }
+    }
+}
