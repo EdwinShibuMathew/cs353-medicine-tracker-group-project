@@ -26,13 +26,92 @@
   </nav>
 </header>
 
-
-
-  <main>
-    <div class="content-box">
+<main>
+  <!-- Keep your existing content box; we just formatted it into two columns -->
+  <div class="content-box home-section">
+    <div class="home-text">
       <h2>Welcome to PillPall</h2>
       <p>Your smart companion for tracking and managing your medications efficiently.</p>
+      <p class="detailed-desc">
+        PillPall is a smart, easy-to-use Medicine Tracking App designed to help you stay organised and on top of your health. 
+        It keeps track of every medicine you take — from prescriptions to vitamins — showing details like dosage, schedule, 
+        and how much you have left. The app automatically reminds you when it’s time to take your next dose so you never miss 
+        a medication again, and it notifies you before any of your medicines expire, giving you time to safely replace them. 
+        With built-in AI assistance, PillPall can suggest optimal times to take your medicines, spot potential conflicts, 
+        and offer helpful insights based on your usage. It also connects to trusted sources like the HSE and other verified 
+        medical databases, ensuring you always have accurate, up-to-date information about your treatments and their uses.
+      </p>
     </div>
-  </main>
+
+    <!-- Inline SVG logo (no external image files needed) -->
+    <div class="home-image">
+      <div class="logo-card" aria-label="PillPall logo">
+        <svg class="pillpall-logo" viewBox="0 0 1000 360" role="img" aria-labelledby="logoTitle logoDesc">
+          <title id="logoTitle">PillPall Logo</title>
+          <desc id="logoDesc">Capsule with glowing heart and word PillPall in orange glow</desc>
+          <defs>
+            <radialGradient id="glow" cx="50%" cy="50%" r="60%">
+              <stop offset="0%" stop-color="#ffb76b"/>
+              <stop offset="60%" stop-color="#ff7f00"/>
+              <stop offset="100%" stop-color="#ff4b00"/>
+            </radialGradient>
+            <linearGradient id="capLeft" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#0e3d52"/>
+              <stop offset="100%" stop-color="#0a2230"/>
+            </linearGradient>
+            <linearGradient id="capRight" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#0a2230"/>
+              <stop offset="100%" stop-color="#0e3d52"/>
+            </linearGradient>
+            <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="6" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="textGlow" x="-40%" y="-40%" width="180%" height="180%">
+              <feGaussianBlur stdDeviation="6" result="g"/>
+              <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+
+          <!-- Capsule -->
+          <g transform="translate(40,55)">
+            <path d="M0,73 a73,73 0 0 1 73,-73 h100 v146 H73 a73,73 0 0 1 -73,-73 z"
+                  fill="url(#capLeft)" stroke="#0c637a" stroke-width="2" filter="url(#softGlow)"/>
+            <path d="M173,0 h100 a73,73 0 0 1 73,73 a73,73 0 0 1 -73,73 h-100 z"
+                  fill="url(#capRight)" stroke="#0c637a" stroke-width="2" filter="url(#softGlow)"/>
+            <rect x="170" y="-6" width="6" height="158" fill="url(#glow)" opacity="0.9"/>
+            <!-- Heart -->
+            <path d="M115,45
+                     c0,-18 14,-30 30,-30
+                     c10,0 19,5 24,13
+                     c5,-8 14,-13 24,-13
+                     c16,0 30,12 30,30
+                     c0,24 -22,40 -54,62
+                     c-32,-22 -54,-38 -54,-62z"
+                  fill="url(#glow)" stroke="#ffb76b" stroke-width="2" filter="url(#softGlow)"/>
+          </g>
+
+          <!-- Wordmark -->
+          <g transform="translate(400,205)">
+            <text x="0" y="0"
+                  font-family="Verdana, Geneva, Tahoma, sans-serif"
+                  font-size="120"
+                  font-weight="700"
+                  letter-spacing="2"
+                  fill="url(#glow)"
+                  filter="url(#textGlow)">PillPall</text>
+            <text x="0" y="0"
+                  font-family="Verdana, Geneva, Tahoma, sans-serif"
+                  font-size="120"
+                  font-weight="700"
+                  letter-spacing="2"
+                  fill="rgba(255,255,255,0.25)">PillPall</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</main>
+
 </body>
 </html>
