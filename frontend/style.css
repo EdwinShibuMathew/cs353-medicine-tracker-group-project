@@ -6,8 +6,28 @@
   font-family: 'Poppins', sans-serif;
 }
 
+/* THEME VARIABLES (colors only) */
+:root {
+  --primary-blue: #1B75BB;
+  --primary-blue-dark: #155e93;
+  --accent-orange: #FFA726;
+
+  /* background palette for page */
+  --bg-base: #ECF4FF;                /* light blue base */
+  --bg-glow-blue: rgba(27,117,187,0.18);
+  --bg-glow-orange: rgba(255,167,38,0.12);
+
+  /* shadows to replace green-tinted ones */
+  --shadow-strong: rgba(27,117,187,0.15);
+  --shadow-soft: rgba(27,117,187,0.10);
+}
+
 body {
-  background-color: #f8f9f8;
+  /* Was #f8f9f8; now soft blue with subtle blue/orange glow */
+  background:
+    radial-gradient(800px 400px at 15% 10%, var(--bg-glow-blue), transparent 60%),
+    radial-gradient(900px 500px at 85% 20%, var(--bg-glow-orange), transparent 60%),
+    var(--bg-base);
   color: #333;
 }
 
@@ -17,7 +37,7 @@ body {
   top: 0;
   width: 100%;
   background-color: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 128, 0, 0.15);
+  box-shadow: 0 2px 8px var(--shadow-strong); /* was green shadow */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,7 +46,7 @@ body {
 }
 
 .logo {
-  color: #008000;
+  color: var(--primary-blue);        /* was #008000 */
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -49,13 +69,13 @@ body {
 
 .nav-links a:hover,
 .nav-links a.active {
-  background-color: #008000;
+  background-color: var(--primary-blue); /* was #008000 */
   color: white;
 }
 
 /* ACCOUNT BUTTON */
 .account-btn button {
-  background-color: #008000;
+  background-color: var(--primary-blue); /* was #008000 */
   color: white;
   border: none;
   padding: 0.4rem 1rem;
@@ -65,7 +85,7 @@ body {
 }
 
 .account-btn button:hover {
-  background-color: #006600;
+  background-color: var(--primary-blue-dark); /* was #006600 */
 }
 
 /* CONTENT */
@@ -81,14 +101,14 @@ main {
   background: white;
   padding: 2rem;
   border-radius: 15px;
-  box-shadow: 0 2px 10px rgba(0, 128, 0, 0.1);
+  box-shadow: 0 2px 10px var(--shadow-soft); /* was greenish shadow */
   max-width: 600px;
   text-align: center;
   width: 100%;
 }
 
 .content-box h2 {
-  color: #008000;
+  color: var(--primary-blue);        /* was #008000 */
   margin-bottom: 1rem;
 }
 
@@ -96,7 +116,7 @@ main {
 .login-container {
   background: white;
   border-radius: 15px;
-  box-shadow: 0 2px 10px rgba(0, 128, 0, 0.1);
+  box-shadow: 0 2px 10px var(--shadow-soft); /* was greenish shadow */
   max-width: 400px;
   margin: 120px auto;
   padding: 2rem;
@@ -104,7 +124,7 @@ main {
 }
 
 .login-container h2 {
-  color: #008000;
+  color: var(--primary-blue);        /* was #008000 */
   margin-bottom: 1rem;
 }
 
@@ -118,7 +138,7 @@ main {
 }
 
 .login-container button {
-  background-color: #008000;
+  background-color: var(--primary-blue); /* was #008000 */
   color: white;
   border: none;
   padding: 0.6rem 1rem;
@@ -128,7 +148,7 @@ main {
 }
 
 .login-container button:hover {
-  background-color: #006600;
+  background-color: var(--primary-blue-dark); /* was #006600 */
 }
 
 /* MOBILE NAV */
@@ -146,7 +166,7 @@ main {
     top: 60px;
     right: 0;
     display: none;
-    box-shadow: 0 2px 10px rgba(0, 128, 0, 0.2);
+    box-shadow: 0 2px 10px var(--shadow-strong); /* was green shadow */
     width: 100%;
   }
 
@@ -181,7 +201,7 @@ main {
 }
 
 .medicine-input button {
-  background-color: #008000;
+  background-color: var(--primary-blue); /* was #008000 */
   color: white;
   border: none;
   border-radius: 10px;
@@ -197,8 +217,8 @@ main {
 #medicineList li {
   margin: 0.3rem 0;
   padding: 0.5rem;
-  background: #f4fdf4;
-  border: 1px solid #008000;
+  background: #e9f4ff;               /* was #f4fdf4 */
+  border: 1px solid var(--primary-blue); /* was #008000 */
   border-radius: 8px;
   display: flex;
   justify-content: space-between;
@@ -207,7 +227,7 @@ main {
 #medicineList button {
   background: none;
   border: none;
-  color: red;
+  color: red; /* kept */
   font-weight: bold;
   cursor: pointer;
 }
@@ -255,7 +275,6 @@ main {
   }
 }
 
-
 .timetable-grid .header-cell {
   background: transparent;
   border: none;
@@ -289,7 +308,7 @@ main {
 .nav-links a.active {
   color: #ffffff;
   font-weight: 600;
-  border-bottom: 2px solid #00a86b;
+  border-bottom: 2px solid var(--accent-orange); /* was #00a86b */
 }
 
 /* Pills display under dropdown */
@@ -302,8 +321,8 @@ main {
 }
 
 .medicine-tag {
-  background: #e9f8ef;
-  color: #007a4b;
+  background: #e9f4ff;   /* was #e9f8ef */
+  color: #0a5e9c;        /* was #007a4b */
   border-radius: 12px;
   padding: 3px 8px;
   font-size: 0.8rem;
