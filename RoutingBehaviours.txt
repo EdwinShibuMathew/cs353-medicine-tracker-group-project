@@ -1,0 +1,8 @@
+Recommended behavior (practical)
+Public (always visible): Home, About, Help/Docs
+Auth-only (visible after login): Medicine, Timetable, Profile, Account, Logout
+Auth-button toggle: show "Login" (or "Sign up") when signed out, replace with "Logout" and optionally the user's name/avatar when signed in.
+Detect auth status:
+
+For the current app, you already store a login flag/user in localStorage (e.g., pillpallUser). Use that to determine state.
+Later, if you add server auth/sessions, use the server (or a signed JWT) to determine actual auth status.

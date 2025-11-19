@@ -1,80 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PillPall - Timetable</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
-</head>
-<body>
-<header>
-  <nav class="navbar">
-    <h1 class="logo" onclick="window.location.href='index.html'">PillPall</h1>
-    <div class="menu-toggle">☰</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="timetable.html">Timetable</a></li>
-      <li><a href="medicine.html">Medicine</a></li>
-      <li><a href="account.html">Account</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="spare.html">Spare</a></li>
-    </ul>
-    <div class="account-btn">
-      <button id="loginBtn" onclick="handleLoginClick()">Login</button>
-    </div>
-  </nav>
-</header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PillPall - Timetable</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <h1 class="logo" onclick="window.location.href='index.html'">
+          PillPall
+        </h1>
+        <div class="menu-toggle">☰</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="timetable.html">Timetable</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="medicine.html">Medicine</a></li>
+          <li><a href="account.html">Account</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="spare.html">Spare</a></li>
+        </ul>
+        <div class="account-btn">
+          <button id="loginBtn" onclick="handleLoginClick()">Login</button>
+        </div>
+      </nav>
+    </header>
 
+    <main>
+      <div class="content-box timetable-container">
+        <div class="timetable-header">
+          <h2>Medicine Timetable</h2>
+          <button id="viewToggle">Switch to Month View</button>
+        </div>
 
+        <!-- WEEK VIEW -->
+        <div id="weekView" class="timetable-grid">
+          <div class="header-cell"></div>
+          <div>Mon</div>
+          <div>Tue</div>
+          <div>Wed</div>
+          <div>Thu</div>
+          <div>Fri</div>
+          <div>Sat</div>
+          <div>Sun</div>
 
-<main>
-  <div class="content-box timetable-container">
-    <div class="timetable-header">
-      <h2>Medicine Timetable</h2>
-      <button id="viewToggle">Switch to Month View</button>
-    </div>
+          <div>Morning</div>
+          <div class="cell" data-time="Morning" data-day="Mon"></div>
+          <div class="cell" data-time="Morning" data-day="Tue"></div>
+          <div class="cell" data-time="Morning" data-day="Wed"></div>
+          <div class="cell" data-time="Morning" data-day="Thu"></div>
+          <div class="cell" data-time="Morning" data-day="Fri"></div>
+          <div class="cell" data-time="Morning" data-day="Sat"></div>
+          <div class="cell" data-time="Morning" data-day="Sun"></div>
 
-    <!-- WEEK VIEW -->
-    <div id="weekView" class="timetable-grid">
-      <div class="header-cell"></div>
-      <div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div><div>Sun</div>
+          <div>Afternoon</div>
+          <div class="cell" data-time="Afternoon" data-day="Mon"></div>
+          <div class="cell" data-time="Afternoon" data-day="Tue"></div>
+          <div class="cell" data-time="Afternoon" data-day="Wed"></div>
+          <div class="cell" data-time="Afternoon" data-day="Thu"></div>
+          <div class="cell" data-time="Afternoon" data-day="Fri"></div>
+          <div class="cell" data-time="Afternoon" data-day="Sat"></div>
+          <div class="cell" data-time="Afternoon" data-day="Sun"></div>
 
-      <div>Morning</div>
-      <div class="cell" data-time="Morning" data-day="Mon"></div>
-      <div class="cell" data-time="Morning" data-day="Tue"></div>
-      <div class="cell" data-time="Morning" data-day="Wed"></div>
-      <div class="cell" data-time="Morning" data-day="Thu"></div>
-      <div class="cell" data-time="Morning" data-day="Fri"></div>
-      <div class="cell" data-time="Morning" data-day="Sat"></div>
-      <div class="cell" data-time="Morning" data-day="Sun"></div>
+          <div>Evening</div>
+          <div class="cell" data-time="Evening" data-day="Mon"></div>
+          <div class="cell" data-time="Evening" data-day="Tue"></div>
+          <div class="cell" data-time="Evening" data-day="Wed"></div>
+          <div class="cell" data-time="Evening" data-day="Thu"></div>
+          <div class="cell" data-time="Evening" data-day="Fri"></div>
+          <div class="cell" data-time="Evening" data-day="Sat"></div>
+          <div class="cell" data-time="Evening" data-day="Sun"></div>
+        </div>
 
-      <div>Afternoon</div>
-      <div class="cell" data-time="Afternoon" data-day="Mon"></div>
-      <div class="cell" data-time="Afternoon" data-day="Tue"></div>
-      <div class="cell" data-time="Afternoon" data-day="Wed"></div>
-      <div class="cell" data-time="Afternoon" data-day="Thu"></div>
-      <div class="cell" data-time="Afternoon" data-day="Fri"></div>
-      <div class="cell" data-time="Afternoon" data-day="Sat"></div>
-      <div class="cell" data-time="Afternoon" data-day="Sun"></div>
-
-      <div>Evening</div>
-      <div class="cell" data-time="Evening" data-day="Mon"></div>
-      <div class="cell" data-time="Evening" data-day="Tue"></div>
-      <div class="cell" data-time="Evening" data-day="Wed"></div>
-      <div class="cell" data-time="Evening" data-day="Thu"></div>
-      <div class="cell" data-time="Evening" data-day="Fri"></div>
-      <div class="cell" data-time="Evening" data-day="Sat"></div>
-      <div class="cell" data-time="Evening" data-day="Sun"></div>
-    </div>
-
-    <!-- MONTH VIEW -->
-    <div id="monthView" class="calendar-grid hidden">
-      <h3 id="monthLabel"></h3>
-      <div class="calendar-days"></div>
-    </div>
-  </div>
-</main>
-
-</body>
+        <!-- MONTH VIEW -->
+        <div id="monthView" class="calendar-grid hidden">
+          <h3 id="monthLabel"></h3>
+          <div class="calendar-days"></div>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>

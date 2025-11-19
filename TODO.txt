@@ -1,0 +1,66 @@
+
+Tasks for Simple Functional Application (backend API + frontend fetch).
+
+Fix backend static serving
+
+    Update server static root so the Express app serves your real frontend files (frontend) instead of src.
+    Outcome: visiting the server root returns your site’s index.html.
+
+Add API endpoint — list medicines
+
+    Implement GET /api/medicines that returns all medicines (id + data).
+    Outcome: frontend can request the list to render current items.
+
+Add API endpoint — delete medicine
+
+    Implement DELETE /api/medicines/:id to remove an item by id.
+    Outcome: frontend can remove items through the API.
+
+Keep/verify existing add endpoint
+
+    Ensure POST /api/medicines remains available and returns the new item id.
+    Outcome: frontend can create items and receive their ids.
+
+Update frontend medicine UI to use the API
+
+    On load: fetch /api/medicines and render items (each with its server id).
+    On add: POST to /api/medicines, append the returned item to the UI.
+    On delete: call DELETE /api/medicines/:id and remove UI element on success.
+    Outcome: all medicine CRUD (list/add/delete) uses the server.
+
+Add graceful fallback to localStorage
+
+    If API requests fail, fall back to current localStorage behavior so the app remains usable offline.
+    Outcome: no loss of UX while server is unreachable.
+
+Test locally (manual QA)
+
+    Start backend, open the app served by the backend, test list/add/delete flows, and verify DB updates.
+    Outcome: end-to-end verification that frontend ↔ backend ↔ Firebase works.
+
+(Optional but recommended) Migrate backend to Firebase Admin SDK
+
+    Replace client SDK usage on the server with firebase-admin and use a service-account credential.
+    Outcome: server-side Firebase access is secure and capable of admin operations.
+
+Harden security
+
+    Harden Realtime DB rules (if using client writes), or restrict client writes by keeping Firebase access server-side.
+    Add authentication/authorization for the API (API keys, token check, or Firebase Auth verification).
+    Outcome: prevent unauthorized writes/reads.
+
+Data migration & cleanup
+
+    (If desired) provide a migration step to import existing localStorage data into Firebase so users keep current items.
+    Outcome: single source of truth in the DB; localStorage used only as fallback.
+
+Deployment and monitoring
+
+    Prepare production deployment steps (config env vars, secrets handling, ports, reverse proxy) and add basic logging/monitoring.
+    Outcome: production-ready, observable service.
+
+Followups / polish
+
+    Add optimistic UI updates, error messages, retries, and any missing endpoints (e.g., update/edit items, search).
+    Add automated tests (small smoke tests for API and UI).
+    Outcome: smoother UX and more robust codebase.

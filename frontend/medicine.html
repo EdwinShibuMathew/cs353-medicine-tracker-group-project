@@ -1,44 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PillPall - Medicines</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
-</head>
-<body>
-<header>
-  <nav class="navbar">
-    <h1 class="logo" onclick="window.location.href='index.html'">PillPall</h1>
-    <div class="menu-toggle">☰</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="timetable.html">Timetable</a></li>
-      <li><a href="medicine.html">Medicine</a></li>
-      <li><a href="account.html">Account</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="spare.html">Spare</a></li>
-    </ul>
-    <div class="account-btn">
-      <button id="loginBtn" onclick="handleLoginClick()">Login</button>
-    </div>
-  </nav>
-</header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PillPall - Medicines</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <h1 class="logo" onclick="window.location.href='index.html'">
+          PillPall
+        </h1>
+        <div class="menu-toggle">☰</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="timetable.html">Timetable</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="medicine.html">Medicine</a></li>
+          <li><a href="account.html">Account</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="spare.html">Spare</a></li>
+        </ul>
+        <div class="account-btn">
+          <button id="loginBtn" onclick="handleLoginClick()">Login</button>
+        </div>
+      </nav>
+    </header>
 
-
-
-<main>
-  <div class="content-box">
-    <h2>Manage Medicines</h2>
-    <p>Add or delete medicines you’re tracking:</p>
-    <div class="medicine-input">
-      <input type="text" id="medicineName" placeholder="Enter medicine name..." />
-      <button id="addMedicine">Add</button>
-    </div>
-    <ul id="medicineList"></ul>
-  </div>
-</main>
-
-</body>
+    <main>
+      <div class="content-box">
+        <h2>Manage Medicines</h2>
+        <p>Add or delete medicines you’re tracking:</p>
+        <div class="medicine-input">
+          <input
+            type="text"
+            id="medicineName"
+            placeholder="Enter medicine name..."
+          />
+          <button id="addMedicine">Add</button>
+        </div>
+        <ul id="medicineList"></ul>
+      </div>
+    </main>
+  </body>
 </html>
